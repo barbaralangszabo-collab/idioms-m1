@@ -628,7 +628,7 @@
         <div class="landing-card-hero">
             
             <div class="landing-top-split-panel">
-                <img src="branding.png" alt="Englishkola Logo" class="landing-logo-large" onerror="this.style.display='none'" />
+                <img src="branding.PNG" alt="Englishkola Logo" class="landing-logo-large" onerror="this.style.display='none'" />
                 <div>
                     <h1 class="landing-title-main">Ready to discover how native speakers really talk?</h1>
                     <p class="landing-p-intro">
@@ -670,7 +670,7 @@
     <div id="main-app-content" class="hidden-layout-state">
         <div class="brand-header-horizontal container">
             <div class="header-left-pane">
-                <img src="branding.png" alt="Englishkola Logo" class="brand-logo-main" onerror="this.style.display='none'" />
+                <img src="branding.PNG" alt="Englishkola Logo" class="brand-logo-main" onerror="this.style.display='none'" />
                 <div class="app-intro-frame">
                     <h1 class="masterclass-title">Idioms and Metaphors Masterclass</h1>
                     <p style="margin:0; font-size:16px; font-weight:400; color:inherit;">
@@ -1190,4 +1190,4 @@
         }
     </script>
 </body>
-</html>
+</html>```
