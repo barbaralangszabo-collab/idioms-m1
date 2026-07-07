@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Englishkola - Idioms & Metaphors Masterclass</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            /* Remapped Accent Tones: Light Amber, Terracotta, and Orange - No muddy shades */
+            --primary-300: #FED99B; /* Light amber accent for borders/badges */
+            --primary-500: #FF843D; /* Vibrant orange for interactive states */
+            --primary-700: #D35230; /* Clear terracotta for highly readable font headers & buttons */
+            
+            /* Secondary Brand Greens/Teals */
+            --secondary-300: #7EDAD6;
+            --secondary-500: #2BB6B4;
+            --secondary-700: #0F766E;
+            
+            /* Accent Tones */
+            --accent-300: #E6F7F4;
+            --accent-500: #4DB6AC;
+            --accent-700: #00796B;
+            
+            /* Background & Surfaces from Brief - Soft light sage background */
+            --bg: #EAF1EE;
+            --surface: #FFFFFF;
+            --surface-alt: #F5F7FA;
+            --border: #E6E9EF;
+            
+            /* Text & Status Colors */
+            --text: #1F2937;
+            --text-2: #4B5563;
+            --text-muted: #6B7280;
+            --text-inverse: #FFFFFF;
+            --success: #2F9E44;
+            --warning: #F59F00;
+            --error: #D92D20;
+            --info: #2563EB;
+
+            /* Typography & Animation Scale Definitions */
+            --font-main: "Inter", "Nunito", system-ui, sans-serif;
+            --font-serif: "Merriweather", serif;
+            --shadow-card: 0 4px 14px rgba(17, 24, 39, 0.08);
+            --transition: 180ms ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.5;
+            transition: background-color var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* --- OPTIMIZED COMPACT LANDING PAGE STYLES --- */
+        .landing-page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 8px;
+        }
+
+        .landing-card-hero {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            padding: 20px 24px;
+            max-width: 1050px;
+            width: 100%;
+            margin-top: -20px;
+        }
+
+        .landing-top-split-panel {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .landing-top-split-panel {
+                grid-template-columns: 240px 1fr;
+                text-align: left;
+            }
+        }
+
+        .landing-logo-large {
+            max-width: 240px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .landing-title-main {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--secondary-700); /* Adjusted to match the brand green style */
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .landing-p-intro {
+            font-size: 16px;
+            color: var(--text-2);
+            line-height: 1.5;
+        }
+
+        .landing-teaser-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+            width: 100%;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .landing-teaser-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .teaser-card-box {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .teaser-card-box h4 {
+            font-size: 18px;
+            color: var(--primary-700);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .teaser-card-box p.task-question-text {
+            font-size: 16px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .teaser-option-btn {
+            width: 100%;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-2);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: left;
+            line-height: 1.3;
+        }
+
+        .teaser-option-btn:hover {
+            border-color: var(--primary-300);
+            background: var(--surface);
+        }
+
+        .teaser-option-btn.correct {
+            border-color: var(--success);
+            background-color: rgba(47, 158, 68, 0.1);
+            color: var(--success);
+        }
+
+        .teaser-option-btn.incorrect {
+            border-color: var(--error);
+            background-color: rgba(217, 45, 32, 0.1);
+            color: var(--error);
+        }
+
+        .teaser-feedback-msg {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* --- MASTERCLASS WORKSPACE STYLES --- */
+        .hidden-layout-state {
+            display: none !important;
+        }
+
+        .brand-header-horizontal {
+            background: var(--surface);
+            padding: 24px;
+            border-bottom: 2px solid var(--border);
+            box-shadow: var(--shadow-card);
+            border-radius: 0 0 16px 16px; 
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        @media (min-width: 992px) {
+            .brand-header-horizontal {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .header-left-pane {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-grow: 1;
+        }
+
+        @media (min-width: 992px) {
+            .header-left-pane {
+                flex-direction: row;
+                align-items: center;
+                max-width: 100%;
+            }
+        }
+
+        .brand-logo-main {
+            max-width: 220px; /* Slightly enlarged as requested */
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 992px) {
+            .brand-logo-main { margin: 0 24px 0 0; }
+        }
+
+        .masterclass-title { 
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--secondary-700);
+            margin-bottom: 8px;
+        }
+
+        .app-intro-frame {
+            background: var(--surface-alt);
+            border: 2px solid var(--primary-300);
+            border-radius: 12px;
+            padding: 20px;
+            color: var(--text);
+            font-size: 16px;
+            box-shadow: var(--shadow-card);
+            flex-grow: 1;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px 20px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-700);
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-main);
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+
+        .accordion-trigger:hover {
+            filter: brightness(97%);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 250ms ease-out;
+            background-color: var(--surface);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .accordion-content.open {
+            max-height: 450px;
+            border: 1px solid var(--border);
+            border-top: none;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+
+        .quick-guide h4 {
+            color: var(--primary-700);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .quick-guide ol, .quick-guide p {
+            margin-left: 20px;
+            font-size: 16px;
+            color: var(--text-2);
+        }
+
+        .control-dashboard-panel {
+            display: grid;
+            grid-template-columns: 1fr;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 24px;
+            gap: 16px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .control-dashboard-panel { grid-template-columns: 1.3fr 1fr; }
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--font-main);
+            border: 2px solid var(--secondary-500);
+            border-radius: 10px;
+            color: var(--secondary-700);
+            background-color: var(--surface);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .progress-track {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            height: 14px;
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success);
+            width: 0%;
+            transition: width 250ms ease;
+        }
+
+        .progress-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-2);
+        }
+
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+            align-items: start;
+        }
+
+        @media (min-width: 768px) {
+            .workspace-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .workspace-block-title {
+            font-size: 24px;
+            color: var(--secondary-700);
+            border-bottom: 2px solid var(--secondary-500);
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            height: 420px;
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+
+        .flashcard-container.flipped .flashcard-inner { transform: rotateY(180deg); }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flashcard-front {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            border-color: var(--secondary-300);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .fc-phrase { font-size: 24px; font-weight: 700; color: var(--text); margin: 8px 0; text-align: center; }
+
+        .image-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-placeholder-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 8px;
+            text-align: center;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .fc-instruction { font-size: 14px; color: var(--text-muted); text-transform: uppercase; margin-top: auto; font-weight: 600; }
+
+        .exercise-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-card); 
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .exercise-prompt { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text); text-align: center; width: 100%; }
+
+        .item-example {
+            font-family: var(--font-serif);
+            font-style: italic;
+            background: var(--surface-alt);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            border-left: 4px solid var(--secondary-500);
+            color: var(--text-2);
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+        } 
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: auto;
+            width: 100%;
+        }
+        @media (min-width: 480px) { .option-grid { grid-template-columns: 1fr 1fr; } }
+
+        .option-btn {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px; 
+            font-weight: 600;
+            color: var(--text-2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--secondary-300);
+            background: var(--surface-alt);
+        } 
+        .option-btn.selected { border-color: var(--secondary-700); background-color: var(--secondary-700); color: var(--text-inverse); }
+        .option-btn.correct-reveal { border-color: var(--success); background-color: rgba(47, 158, 68, 0.1); color: var(--success); }
+        
+        .drag-match-container { display: flex; flex-direction: column; gap: 10px; margin-top: auto; width: 100%; }
+        .drag-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 12px; background-color: var(--surface-alt); border: 2px dashed var(--border); border-radius: 12px; min-height: 60px; width: 100%; }
+        .draggable-token { background-color: var(--surface); border: 2px solid var(--border); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: var(--transition); text-align: center; }
+        .drop-target-slot { border: 2px dashed var(--secondary-500); background-color: var(--surface-alt); padding: 12px; border-radius: 10px; text-align: center; font-weight: 600; min-height: 50px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        
+        .order-container-zone {
+            border: 2px dashed var(--border);
+            background-color: var(--surface-alt);
+            padding: 12px;
+            border-radius: 10px;
+            min-height: 50px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .word-fragment-node {
+            background-color: var(--surface);
+            border: 2px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .word-fragment-node.assigned-state {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background-color: var(--border);
+        }
+
+        .controls-pane {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            align-items: center;
+            width: 100%;
+        }
+        @media (min-width: 480px) {
+            .controls-pane {
+                grid-template-columns: auto 1fr auto;
+            }
+        }
+
+        .btn-group-nav {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn { font-size: 16px; font-weight: 600; padding: 10px 20px; border-radius: 9999px; border: none; cursor: pointer; font-family: var(--font-main); transition: var(--transition); text-align: center; }
+        .btn-primary { background: var(--primary-700); color: var(--text-inverse); }
+        .btn-primary:hover { filter: brightness(95%); }
+        .btn-ghost { background: transparent; color: var(--primary-700); border: 2px solid var(--primary-300); }
+        .btn-ghost:hover { background: rgba(254, 217, 155, 0.24); }
+        .btn-action-check { background: var(--secondary-700); color: var(--text-inverse); }
+        
+        .action-row {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            width: 100%;
+        }
+        
+        .feedback-banner { padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 16px; font-weight: 600; display: none; width: 100%; text-align: center; }
+        .fb-ok { background: #E6F4EA; color: var(--success); }
+        .fb-err { background: #FCE8E6; color: var(--error); }
+        .fb-hint { background: #FCE8E6; color: var(--primary-700); font-family: var(--font-serif); font-style: italic; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 14px; font-weight: 600; text-transform: uppercase; background: var(--primary-300); color: var(--primary-700); margin-bottom: 8px; text-align: center; width: fit-content; }
+    </style>
+</head>
+<body>
+
+    <div id="landing-page" class="container landing-page-container">
+        <div class="landing-card-hero">
+            
+            <div class="landing-top-split-panel">
+                <img src="branding.png" alt="Englishkola Logo" class="landing-logo-large" onerror="this.style.display='none'" />
+                <div>
+                    <h1 class="landing-title-main">Ready to discover how native speakers really talk?</h1>
+                    <p class="landing-p-intro">
+                        Expressions carry creative meanings that sound funny if translated word-for-word. Let's see if you can solve these three mini tasks below before starting the masterclass!
+                    </p>
+                </div>
+            </div>
+
+            <div class="landing-teaser-grid">
+                <div class="teaser-card-box">
+                    <h4>Piece of cake 🍰</h4>
+                    <p class="task-question-text">If your teacher says the final review exam is a "piece of cake," what do they mean?</p>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, false)">A sweet dessert slice on your desk</button>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, true)">A task that is exceptionally easy</button>
+                    <div class="teaser-feedback-msg"></div>
+                </div>
+
+                <div class="teaser-card-box">
+                    <h4>Butterflies in my stomach 🦋</h4>
+                    <p class="task-question-text">If you step up to deliver a big speech and have "butterflies in your stomach," how do you feel?</p>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, true)">Nervous or excited about something</button>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, false)">Like you swallowed small flying insects</button>
+                    <div class="teaser-feedback-msg"></div>
+                </div>
+
+                <div class="teaser-card-box">
+                    <h4>Cat got your tongue? 🐱</h4>
+                    <p class="task-question-text">If you stay completely silent during a conversation and someone asks this question, what do they mean?</p>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, false)">Your pet cat is misbehaving again</button>
+                    <button class="teaser-option-btn" onclick="checkTeaser(this, true)">You are silent and unable to speak</button>
+                    <div class="teaser-feedback-msg"></div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="padding: 12px 40px; font-size:16px;" onclick="enterApplicationMainRoute()">Start Masterclass →</button>
+        </div>
+    </div>
+
+    <div id="main-app-content" class="hidden-layout-state">
+        <div class="brand-header-horizontal container">
+            <div class="header-left-pane">
+                <img src="branding.png" alt="Englishkola Logo" class="brand-logo-main" onerror="this.style.display='none'" />
+                <div class="app-intro-frame">
+                    <h1 class="masterclass-title">Idioms and Metaphors Masterclass</h1>
+                    <p style="margin:0; font-size:16px; font-weight:400; color:inherit;">
+                        Idioms and metaphors are the true core of standard English communication. Mastering them allows you to look beyond literal dictionary words, understand native films or professional publications effortlessly, and express complex human emotions in a creative way.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <button class="accordion-trigger" onclick="toggleAccordion('functions-panel')">
+                <span>💡 How to Use This App &amp; What You Will Learn (Click to expand)</span>
+                <span>▼</span>
+            </button>
+            <div id="functions-panel" class="accordion-content">
+                <div class="quick-guide">
+                    <h4>Interactive Modalities</h4>
+                    <p>This app has two main practice zones to help you remember these expressions quickly without feeling overwhelmed:</p>
+                    <ol style="margin-top: 6px;">
+                        <li><strong>Flashcard Studio:</strong> Flip the cards to look at the phrase, see a helpful picture, check its meaning, and see how it works in a normal sentence.</li>
+                        <li><strong>Context Practice Lab:</strong> Test your skills with three different challenges! You will find multiple-choice questions, definition matching activities, and word puzzles where you can rebuild the sentence step-by-step.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="control-dashboard-panel" style="margin-top:16px;">
+                <div>
+                    <select class="filter-select" id="global-category-filter" onchange="handleCategoryShift()">
+                        <option value="routine">Theme 1: Daily Routine &amp; Choices</option>
+                        <option value="feelings">Theme 2: Feelings &amp; Temperament</option>
+                        <option value="society">Theme 3: Social Realities &amp; Connections</option>
+                        <option value="nature">Theme 4: Nature, Figures &amp; Landscapes</option>
+                        <option value="animals">Theme 5: Animals &amp; Living Expressions</option>
+                    </select>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar-label">
+                        <span>Exercises Completed</span>
+                        <span id="progress-percentage-label">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="exercise-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="flashcard-wrapper">
+                    <h2 class="workspace-block-title">Flashcard Studio</h2>
+                    <div class="flashcard-container" onclick="flipActiveCardViewport()">
+                        <div class="flashcard-inner" id="flashcard-render-viewport"></div>
+                    </div>
+                    <div class="action-row">
+                        <div class="controls-pane">
+                            <div class="btn-group-nav">
+                                <button class="btn btn-ghost" onclick="navigateFlashcard(-1); event.stopPropagation();">◀ Prev</button>
+                                <button class="btn btn-ghost" onclick="navigateFlashcard(1); event.stopPropagation();">Next ▶</button>
+                            </div>
+                            <div style="text-align: center; font-weight:600; color:var(--text-2);" id="fc-deck-counter">1 / 0</div>
+                            <button class="btn btn-ghost" onclick="flipActiveCardViewport(); event.stopPropagation();">Flip 🔄</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="workspace-block-title">Context Practice Lab</h2>
+                    <div id="exercise-workspace-mount"></div>
+                    <div class="action-row">
+                        <div class="controls-pane">
+                            <div class="btn-group-nav">
+                                <button class="btn btn-ghost" id="prev-exercise-btn" onclick="navigateExercise(-1)">◀ Prev</button>
+                                <button class="btn btn-ghost" id="next-exercise-btn" onclick="navigateExercise(1)">Next ▶</button>
+                                <button class="btn btn-action-check" onclick="verifyExerciseAnswer()">Check</button>
+                            </div>
+                            <div style="text-align: center; font-weight:600; color:var(--text-2);" id="task-deck-counter">Task 1 / 0</div>
+                            <div class="btn-group-nav">
+                                <button class="btn btn-ghost" onclick="triggerScaffoldHint()" title="Hint">💡</button>
+                                <button class="btn btn-ghost" onclick="revealExerciseAnswer()">Reveal</button>
+                                <button class="btn btn-ghost" onclick="resetCurrentExercise()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-row center-axis" style="border-top:1px solid var(--border); padding-top:16px; margin-bottom:20px; justify-content: center; display: flex;">
+                <button class="btn btn-primary" onclick="advanceToNextThemeRoute()">Move to Next Theme Category →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const expressionsDataset = [
+            /* --- THEME 1: ROUTINE (10 ITEMS) --- */
+            { id: 1, type: "Idiom", category: "routine", group: "verb", phrase: "go the extra mile", explanation: "make an extra effort to achieve a better result.", example: "She decided to go the extra mile on her homework assignment.", hint: "Think about moving a further distance.", file: "go-the-extra-mile.png" },
+            { id: 5, type: "Idiom", category: "routine", group: "verb", phrase: "hit the ground running", explanation: "start a new activity immediately with a lot of energy and speed.", example: "The new engineering lead managed to hit the ground running on day one.", hint: "Think about sprinting instantly as your feet touch down.", file: "hit-the-ground-running.png" },
+            { id: 6, type: "Idiom", category: "routine", group: "noun", phrase: "piece of cake", explanation: "a task, assignment, or job that is exceptionally easy to finish.", example: "The final grammar review test was a piece of cake.", hint: "Think about a sweet dessert slice.", file: "a-piece-of-cake.png" },
+            { id: 8, type: "Idiom", category: "routine", group: "verb", phrase: "hit the hay", explanation: "an informal phrase that means to finish your day and go to sleep.", example: "It is past midnight; I need to hit the hay immediately.", hint: "Think about dried grass parameters used for sleeping mats.", file: "hit-the-day.png" },
+            { id: 31, type: "Idiom", category: "routine", group: "verb", phrase: "burn the midnight oil", explanation: "study or work late into the night to finish a specific goal.", example: "He had to burn the midnight oil to prepare the morning lessons.", hint: "Think about lighting traditional lamps before electricity.", file: "burn-the-midnight-oil.png" },
+            { id: 23, type: "Idiom", category: "routine", group: "clause", phrase: "once in a blue moon", explanation: "an event or action that happens very rarely or with minimal frequency.", example: "He writes long letters to his old school friends only once in a blue moon.", hint: "Think about an unusual rare color shift of the moon.", file: "once-in-a-blue-moon.png" },
+            { id: 50, type: "Idiom", category: "routine", group: "verb", phrase: "call it a day", explanation: "stop working on something for the rest of the day.", example: "We've built four files already, let's call it a day.", hint: "Finishing work when you are tired.", file: "call-it-a-day.png" },
+            { id: 51, type: "Idiom", category: "routine", group: "noun", phrase: "crunch time", explanation: "a short period when you must work very hard due to a deadline.", example: "It is crunch time for the engineering team before launch.", hint: "A period of high stress.", file: "crunch-time.png" },
+            { id: 52, type: "Idiom", category: "routine", group: "adjective", phrase: "at the eleventh hour", explanation: "at the last possible moment before something happens.", example: "The document framework was revised at the eleventh hour.", hint: "Just before the clock strikes midnight.", file: "eleventh-hour.png" },
+            { id: 53, type: "Idiom", category: "routine", group: "verb", phrase: "get the show on the road", explanation: "to finally start an activity, a project, or a journey.", example: "We have the approval, so let's get the show on the road.", hint: "Think about a traveling group starting their track.", file: "get-show-on-road.png" },
+
+            /* --- THEME 2: FEELINGS (10 ITEMS) --- */
+            { id: 9, type: "Idiom", category: "feelings", group: "noun", phrase: "butterflies in my stomach", explanation: "a nervous or excited feeling in your body before doing something important.", example: "Before stepping up to deliver the speech, I had butterflies in my stomach.", hint: "Think about beautiful flying insects.", file: "butterflies-in-your-stomach.png" },
+            { id: 10, type: "Idiom", category: "feelings", group: "verb", phrase: "go down in flames", explanation: "fail completely and spectacularly, causing total destruction of a plan.", example: "The unverified product strategy went down in flames during the sync.", hint: "Think about a burning airplane crash.", file: "go-down-with-the-flames.png" },
+            { id: 11, type: "Idiom", category: "feelings", group: "verb", phrase: "fly off the handle", explanation: "lose control of your emotions and suddenly become very angry.", example: "He is typically calm, so it was odd to see him fly off the handle over a typo.", hint: "Think about an axe head breaking loose when swung.", file: "fly-off-the-handle.png" },
+            { id: 12, type: "Idiom", category: "feelings", group: "adjective", phrase: "walking on air", explanation: "a state of deep happiness and excitement after a major success.", example: "Ever since she cleared the level three assessment, she has been walking on air.", hint: "Think about optical flotation features high above the ground.", file: "walking-on-air.png" },
+            { id: 13, type: "Idiom", category: "feelings", group: "adjective", phrase: "on cloud nine", explanation: "feeling extremely happy, satisfied, and delighted with your situation.", example: "When the exam scores cleared perfectly, the lead was on cloud nine.", hint: "Think about a high number classification in the atmosphere.", file: "on-cloud-nine.png" },
+            { id: 200, type: "Metaphor", category: "feelings", group: "adjective", phrase: "feeling blue", explanation: "feeling sad, down, or slightly depressed about your situation.", example: "Yesterday I was feeling so blue until she sent over the metrics.", hint: "A primary baseline color linked directly with low spirits.", file: "feeling-blue.png" },
+            { id: 14, type: "Idiom", category: "feelings", group: "adjective", phrase: "tickled pink", explanation: "feeling very amused, pleased, or happy with a nice surprise.", example: "She was warm and tickled pink when the class organised a surprise card.", hint: "Think about a rosy shade your face turns when you laugh.", file: "tickled-pink.png" },
+            { id: 32, type: "Idiom", category: "feelings", group: "adjective", phrase: "down in the dumps", explanation: "feeling unhappy, sad, or down in spirits because of your situation.", example: "After the project budget was rejected, the team felt down in the dumps.", hint: "Think about a dark rubbish disposal pit.", file: "down-in-the-dumps.png" },
+            { id: 33, type: "Idiom", category: "feelings", group: "adjective", phrase: "over the moon", explanation: "extremely pleased, delighted, and happy about a positive event.", example: "Alice was over the moon when her app achieved perfect metrics.", hint: "Think about leaping above the night sky object.", file: "over-the-moon.png" },
+            { id: 201, type: "Idiom", category: "feelings", group: "verb", phrase: "blow your top", explanation: "to suddenly lose control and become extremely angry.", example: "The director blew his top when the data link crashed again.", hint: "Exploding like a volatile volcano layout.", file: "blow-your-top.png" },
+
+            /* --- THEME 3: SOCIETY & CONNECTIONS (10 ITEMS) --- */
+            { id: 202, type: "Idiom", category: "society", group: "verb", phrase: "bite the bullet", explanation: "face a difficult or expensive situation with courage and get it over with.", example: "I was nervous to speak in front of the class, but I decided to bite the bullet.", hint: "Biting on a metal casing during emergency surgery.", file: "bite-the-bullet.png" },
+            { id: 203, type: "Idiom", category: "society", group: "adjective", phrase: "costs an arm and a leg", explanation: "exceptionally or unreasonably expensive.", example: "That corporate training resource costs an arm and a leg.", hint: "Paying with your own limbs because the price is too high.", file: "arm-and-leg.png" },
+            { id: 204, type: "Idiom", category: "society", group: "noun", phrase: "a bull in a china shop", explanation: "behaving clumsily or destructively in a delicate situation.", example: "He was like a bull in a china shop during the fine pottery review.", hint: "A massive wild animal trapped inside a porcelain store.", file: "bull-china-shop.png" },
+            { id: 205, type: "Idiom", category: "society", group: "adjective", phrase: "like a fish out of water", explanation: "feeling uncomfortable, awkward, or out of place because you are in an unfamiliar situation.", example: "On his first day at the corporate headquarters, he felt like a fish out of water.", hint: "An aquatic creature completely removed from its natural element.", file: "fish-out-of-water.png" },
+            { id: 206, type: "Idiom", category: "society", group: "verb", phrase: "grab the bull by the horns", explanation: "deal with a difficult problem directly and confidently.", example: "She grabbed the bull by the horns during her first morning meeting.", hint: "Taking control of a dangerous animal by its head loops.", file: "grab-horns.png" },
+            { id: 21, type: "Idiom", category: "society", group: "verb", phrase: "drop the ball", explanation: "make a careless mistake or fail in your basic responsibilities.", example: "He really dropped the ball on the project, so we had to finish it.", hint: "Failing to catch an object in a sport sequence.", file: "drop-the-ball.png" },
+            { id: 20, type: "Idiom", category: "society", group: "clause", phrase: "the ball is in your court", explanation: "it is now your responsibility to make the next move or decision.", example: "We sent over our final plan; now the ball is in your court.", hint: "Think about an active tennis match area.", file: "the-ball-is-in-your-court.png" },
+            { id: 22, type: "Idiom", category: "society", group: "verb", phrase: "throw your hat in the ring", explanation: "officially announce that you want to join a competition or contest.", example: "She finally decided to throw her hat in the ring for the promotion.", hint: "Entering an arena circle loop.", file: "throw-hat-in-ring.png" },
+            { id: 1025, type: "Idiom", category: "society", group: "clause", phrase: "the gloves are off", explanation: "tensions have risen and people are beginning to fight or argue fiercely.", example: "The debate started politely, but now the gloves are off.", hint: "Opponents removing protective wear in a match.", file: "gloves-are-off.png" },
+            { id: 1026, type: "Idiom", category: "society", group: "verb", phrase: "bite off more than you can chew", explanation: "taking on a task or responsibility that is too big or difficult.", example: "By leading three projects at once, he bit off more than he could chew.", hint: "Taking a massive piece of food that you cannot swallow.", file: "bite-more-chew.png" },
+
+            /* --- THEME 4: NATURE (10 ITEMS) --- */
+            { id: 24, type: "Idiom", category: "nature", group: "clause", phrase: "once in a blue moon", explanation: "an event or action that happens very rarely or with minimal frequency.", example: "He writes long letters to his old school friends only once in a blue moon.", hint: "Think about an unusual rare color shift of the moon.", file: "once-in-a-blue-moon.png" },
+            { id: 25, type: "Idiom", category: "nature", group: "noun", phrase: "a storm in a teacup", explanation: "a lot of anger or worry about a trivial matter that is not actually important.", example: "The argument regarding classroom desks was simply a storm in a teacup.", hint: "Think about rain inside a small porcelain drink cup.", file: "a-storm-in-a-teacup.png" },
+            { id: 26, type: "Metaphor", category: "nature", group: "noun", phrase: "a sleeping giant", explanation: "a power or group that is passive now but could become very dangerous.", example: "The quiet school team is a sleeping giant in this term's sports metrics.", hint: "Think about a massive mythic warrior waking up.", file: "a-sleeping-giant.png" },
+            { id: 27, type: "Simile", category: "nature", group: "clause", phrase: "like a wild beast", explanation: "showing wild, dangerous, or unconstrained power and energy.", example: "The wind was roaring like a wild beast during the winter geless.", hint: "Think about a ferocious untamed predator.", file: "like-a-wild-beast.png" },
+            { id: 28, type: "Metaphor", category: "nature", group: "noun", phrase: "the tip of the iceberg", explanation: "a small visible part of a much bigger, hidden problem or reality.", example: "These small grammar mistakes are just the tip of the iceberg.", hint: "Think about a giant floating mountain of ice.", file: "the-tip-of-the-iceberg.png" },
+            { id: 29, type: "Idiom", category: "nature", group: "verb", phrase: "put all your eggs in one basket", explanation: "risk everything you have on a single choice instead of keeping other options open.", example: "Applying to only one university is putting all your eggs in one basket.", hint: "Think about fragile breakfast components carried in a single tray.", file: "put-all-your-eggs-in-one-basket.png" },
+            { id: 30, type: "Simile", category: "nature", group: "adjective", phrase: "as soft as silk", explanation: "having an exceptionally smooth, soft, and comfortable texture.", example: "The fabric of the new uniform scarf was as soft as silk.", hint: "Think about a smooth worm-made textile.", file: "as-soft-as-silk.png" },
+            { id: 40, type: "Metaphor", category: "nature", group: "noun", phrase: "a jungle of colours and sounds", explanation: "a lively, confusing environment with a massive mixture of sights and noises.", example: "During the autumn festival, the town square becomes a jungle of colours and sounds.", hint: "Think about a chaotic rainforest landscape layout.", file: "a-jungle-of-colours-and-sounds.png" },
+            { id: 41, type: "Metaphor", category: "nature", group: "noun", phrase: "life is a rollercoaster", explanation: "an experience with many happy and difficult times changing regularly.", example: "Living in a new city proved that life is a rollercoaster.", hint: "Think about an amusement park rail car ride.", file: "life-is-like-a-rollercoaster.png" },
+            { id: 42, type: "Metaphor", category: "nature", group: "noun", phrase: "language learning is a journey", explanation: "a long process that takes a lot of time and personal effort to complete.", example: "Learning standard grammar rules is a long journey.", hint: "Think about traveling from one place to another.", file: "journey.png" },
+
+            /* --- THEME 5: ANIMALS --- */
+            { id: 301, type: "Idiom", category: "animals", group: "clause", phrase: "there isn't enough space to swing a cat", explanation: "a phrase used to say that a room or space is extremely tiny, tight, or heavily packed.", example: "They put our study circle into a tiny office section where there isn't enough space to swing a cat.", hint: "A domestic feline being swung around a small perimeter.", file: "swing-cat.png" },
+            { id: 302, type: "Idiom", category: "animals", group: "verb", phrase: "let the cat out of the bag", explanation: "accidentally or carelessly reveal a secret or hidden plan ahead of time.", example: "We wanted to surprise the teacher, but Peter let the cat out of the bag.", hint: "Think about an animal escaping from a dark sack.", file: "cat-out-of-bag.png" },
+            { id: 303, type: "Idiom", category: "animals", group: "verb", phrase: "kill two birds with one stone", explanation: "achieve two different results or solve two problems with a single action.", example: "By walking to the language school, I can kill two birds with one stone: get exercise and save money.", hint: "Using a single throwing projectile against multiple targets.", file: "two-birds.png" },
+            { id: 304, type: "Simile", category: "animals", group: "adjective", phrase: "as quiet as a mouse", explanation: "making virtually no sound; completely silent and still.", example: "The kids were as quiet as a mouse while doing their vocabulary drill.", hint: "A tiny rodent moving quietly across a floor.", file: "quiet-mouse.png" },
+            { id: 305, type: "Simile", category: "animals", group: "adjective", phrase: "as blind as a bat", explanation: "having very poor eyesight, or being completely unable to notice visual details.", example: "Without my reading glasses, I am as blind as a bat.", hint: "A nocturnal flying animal tracking objects in the dark.", file: "blind-bat.png" },
+            { id: 306, type: "Metaphor", category: "animals", group: "noun", phrase: "a lone wolf", explanation: "a person who prefers to work, study, or live alone without relying on a group.", example: "When it comes to studying grammar rules, Arthur is a lone wolf.", hint: "A wild forest predator hunting apart from its pack.", file: "lone-wolf.png" },
+            { id: 307, type: "Metaphor", category: "animals", group: "noun", phrase: "crocodile tears", explanation: "fake or insincere expressions of sorrow or sadness to deceive others.", example: "Don't be fooled by his apology; those were just crocodile tears.", hint: "An ancient reptile shedding moisture while eating prey.", file: "crocodile-tears.png" },
+            { id: 308, type: "Idiom", category: "animals", group: "verb", phrase: "smell a rat", explanation: "begin to suspect that something dishonest, deceptive, or tricky is happening.", example: "When they asked for my password on that unverified website, I began to smell a rat.", hint: "Detecting the presence of a hidden pest.", file: "smell-rat.png" },
+            { id: 309, type: "Idiom", category: "animals", group: "noun", phrase: "the elephant in the room", explanation: "an obvious, major problem or controversial issue that everyone knows about but avoids discussing.", example: "No one wanted to talk about our dropping exam metrics, which was the elephant in the room.", hint: "A giant gray safari mammal blocking the center of a living space.", file: "elephant-room.png" },
+            { id: 310, type: "Simile", category: "animals", group: "adjective", phrase: "as stubborn as a mule", explanation: "determined to do what you want and completely refusing to change your mind.", example: "I tried to convince him to rewrite the script, but he was as stubborn as a mule.", hint: "A pack animal refusing to walk forward loop.", file: "stubborn-mule.png" }
+        ];
+
+        let activeTheme = 'routine';
+        let currentFlashcardIndex = 0;
+        let currentExerciseIndex = 0;
+        let activeDeckFlashcards = [];
+        let activeDeckExercises = [];
+        let completedExercisesMap = {};
+        let arrangedSequenceBlocks = [];
+        let selectedPullDefinitionValue = "";
+
+        function checkTeaser(btn, isCorrect) {
+            const parent = btn.parentElement;
+            const feedback = parent.querySelector('.teaser-feedback-msg');
+            const buttons = parent.querySelectorAll('.teaser-option-btn');
+            
+            buttons.forEach(b => {
+                b.classList.remove('correct', 'incorrect');
+                b.disabled = true;
+            });
+            feedback.style.display = 'block';
+            if (isCorrect) {
+                btn.classList.add('correct');
+                feedback.textContent = "✓ Excellent! You nailed it!";
+                feedback.style.color = "var(--success)";
+            } else {
+                btn.classList.add('incorrect');
+                feedback.textContent = "✕ Sounds funny, but nope! Pick the other choice to uncover the true idiom.";
+                feedback.style.color = "var(--error)";
+                buttons.forEach(b => { if(b !== btn) b.disabled = false; });
+            }
+        }
+
+        function enterApplicationMainRoute() {
+            document.getElementById('landing-page').classList.add('hidden-layout-state');
+            document.getElementById('main-app-content').classList.remove('hidden-layout-state');
+            handleCategoryShift();
+        }
+
+        function toggleAccordion(panelId) {
+            const panel = document.getElementById(panelId);
+            const trigger = panel.previousElementSibling.querySelector('span:last-child');
+            if (panel.classList.contains('open')) {
+                panel.classList.remove('open');
+                trigger.textContent = '▼';
+            } else {
+                panel.classList.add('open');
+                trigger.textContent = '▲';
+            }
+        }
+
+        function handleCategoryShift() {
+            activeTheme = document.getElementById('global-category-filter').value;
+            resetFlashcardDeckState();
+            initiateExerciseLab();
+        }
+
+        function advanceToNextThemeRoute() {
+            const dropdown = document.getElementById('global-category-filter');
+            const variants = ['routine', 'feelings', 'society', 'nature', 'animals'];
+            let nextIndex = variants.indexOf(activeTheme) + 1;
+            if (nextIndex >= variants.length) nextIndex = 0;
+            dropdown.value = variants[nextIndex];
+            handleCategoryShift();
+        }
+
+        function resetFlashcardDeckState() {
+            activeDeckFlashcards = expressionsDataset.filter(item => item.category === activeTheme);
+            currentFlashcardIndex = 0;
+            renderFlashcardInstance();
+        }
+
+        function renderFlashcardInstance() {
+            const viewport = document.getElementById('flashcard-render-viewport');
+            const counter = document.getElementById('fc-deck-counter');
+            document.querySelector('.flashcard-container').classList.remove('flipped');
+            
+            if (activeDeckFlashcards.length === 0) {
+                viewport.innerHTML = `<div class="flashcard-front"><p>No items found.</p></div>`;
+                counter.textContent = "0 / 0";
+                return;
+            }
+
+            const activeCard = activeDeckFlashcards[currentFlashcardIndex];
+            counter.textContent = `${currentFlashcardIndex + 1} / ${activeDeckFlashcards.length}`;
+
+            let imgBlock = '';
+            if(activeCard.file) {
+                imgBlock = `<div class="image-container"><img src="${activeCard.file}" alt="${activeCard.phrase}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder-text\\'>[Visual Asset Illustration: ${activeCard.phrase}]</div>'"></div>`;
+            } else {
+                imgBlock = `<div class="image-container"><div class="image-placeholder-text">[Visual Asset Frame: ${activeCard.phrase}]</div></div>`;
+            }
+
+            viewport.innerHTML = `
+                <div class="flashcard-front">
+                    <span class="badge">${activeCard.type}</span>
+                    ${imgBlock}
+                    <h2 class="fc-phrase" style="font-size:22px; margin:4px 0;">${activeCard.phrase}</h2>
+                    <p class="fc-instruction">Click card to show definition</p>
+                </div>
+                <div class="flashcard-back">
+                    <span class="badge" style="background:var(--secondary-500); color:var(--text-inverse); margin-bottom: 16px;">Meaning Definition</span>
+                    <p style="font-weight:600; font-size:16px; text-align:center; margin-bottom:12px; padding:0 8px; color:var(--text);">${activeCard.explanation}</p>
+                    <div class="item-example" style="margin-bottom: 12px; width: 100%;">"${activeCard.example}"</div>
+                    <p class="fc-instruction">Click card to show front</p>
+                </div>
+            `;
+        }
+
+        function navigateFlashcard(direction) {
+            if (activeDeckFlashcards.length === 0) return;
+            currentFlashcardIndex += direction;
+            if (currentFlashcardIndex < 0) currentFlashcardIndex = activeDeckFlashcards.length - 1;
+            if (currentFlashcardIndex >= activeDeckFlashcards.length) currentFlashcardIndex = 0;
+            renderFlashcardInstance();
+        }
+
+        function flipActiveCardViewport() { 
+            if (activeDeckFlashcards.length === 0) return;
+            document.querySelector('.flashcard-container').classList.toggle('flipped');
+        }
+
+        function initiateExerciseLab() {
+            activeDeckExercises = expressionsDataset.filter(item => item.category === activeTheme);
+            currentExerciseIndex = 0;
+            renderExerciseInstance();
+            calculateProgress();
+        }
+
+        function renderExerciseInstance() {
+            const workspace = document.getElementById('exercise-workspace-mount');
+            if (activeDeckExercises.length === 0) {
+                workspace.innerHTML = `<div class="exercise-card"><p>No exercises loaded.</p></div>`;
+                return;
+            }
+            const question = activeDeckExercises[currentExerciseIndex];
+            const wordUnits = question.phrase.split(' ');
+            
+            let availableVariants = ['choice', 'pull'];
+            // Task variation requirement: Only offer word ordering task if there are minimum 4 words
+            if (wordUnits.length >= 4) {
+                availableVariants.push('order');
+            }
+            
+            const selectedVariant = availableVariants[currentExerciseIndex % availableVariants.length];
+            let html = '';
+
+            let strictAlternatives = [question.phrase];
+            let syntaxPool = expressionsDataset.filter(e => e.phrase !== question.phrase && e.group === question.group);
+            if (syntaxPool.length < 3) syntaxPool = expressionsDataset.filter(e => e.phrase !== question.phrase);
+            syntaxPool.sort(() => Math.random() - 0.5);
+            for(let i=0; i<3; i++) { 
+                if(syntaxPool[i]) strictAlternatives.push(syntaxPool[i].phrase);
+            }
+            strictAlternatives.sort(() => Math.random() - 0.5);
+
+            if (selectedVariant === 'choice') {
+                html = `
+                    <div class="exercise-card" id="active-exercise-node" data-variant="choice" data-answer="${question.phrase}" data-term-id="${question.id}">
+                        <span class="badge" style="background:var(--secondary-500); color:var(--text-inverse);">Format 1: Multiple Choice</span>
+                        <div class="exercise-prompt">
+                            Choose the option that fits the context:
+                            <div class="item-example">"${question.example.replace(new RegExp(question.phrase, 'gi'), '_________________')}"</div>
+                        </div>
+                        <div class="feedback-banner fb-ok" id="fb-success">✓ Correct answer!</div>
+                        <div class="feedback-banner fb-err" id="fb-fail">× Incorrect. Try another choice option!</div>
+                        <div class="feedback-banner fb-hint" id="fb-hint">💡 <strong>Hint:</strong> ${question.hint}</div>
+                        <div class="option-grid">${strictAlternatives.map(choice => `<button class="option-btn" onclick="selectOptionNode(this)">${choice}</button>`).join('')}</div>
+                    </div>
+                `;
+            } else if (selectedVariant === 'pull') {
+                html = `
+                    <div class="exercise-card" id="active-exercise-node" data-variant="pull" data-answer="${question.phrase}" data-term-id="${question.id}">
+                        <span class="badge" style="background:var(--secondary-500); color:var(--text-inverse);">Format 2: Matching Lab</span>
+                        <div class="exercise-prompt">Match the correct definition:<div class="item-example"><strong>Expression:</strong> "${question.phrase}"</div></div>
+                        <div class="feedback-banner fb-ok" id="fb-success">✓ Correct answer!</div>
+                        <div class="feedback-banner fb-err" id="fb-fail">× Incorrect selection. Try another option!</div>
+                        <div class="feedback-banner fb-hint" id="fb-hint">💡 <strong>Hint:</strong> The description starts with: "${question.explanation.split(' ')[0]}"</div>
+                        <div class="drop-target-slot" id="pull-drop-destination-target" style="margin-bottom: 16px;"><span class="text-muted" style="font-style: italic;">Select the correct definition block below...</span></div>
+                        <div class="drag-match-container"><div class="drag-pool">${strictAlternatives.map(opt => {
+                            const matchedItem = expressionsDataset.find(e => e.phrase === opt);
+                            const textString = matchedItem ? matchedItem.explanation : '';
+                            return `<div class="draggable-token" onclick="selectPullTokenElement(this, \`${textString.replace(/'/g, "\\'")}\`)">${textString}</div>`;
+                        }).join('')}</div></div>
+                    </div>
+                `;
+            } else if (selectedVariant === 'order') {
+                const scrambledUnits = [...wordUnits].sort(() => Math.random() - 0.5);
+                arrangedSequenceBlocks = [];
+                html = `
+                    <div class="exercise-card" id="active-exercise-node" data-variant="order" data-answer="${question.phrase}" data-term-id="${question.id}">
+                        <span class="badge" style="background:var(--secondary-500); color:var(--text-inverse);">Format 3: Complete the Sentence</span>
+                        <div class="exercise-prompt">Click the word blocks in sequence to build the phrase structure:
+                            <div class="item-example">"Meaning: ${question.explanation}"</div>
+                        </div>
+                        <div class="feedback-banner fb-ok" id="fb-success">✓ Correct answer!</div>
+                        <div class="feedback-banner fb-err" id="fb-fail">× Incorrect order. Reset and try again.</div>
+                        <div class="feedback-banner fb-hint" id="fb-hint">💡 <strong>Hint:</strong> ${question.hint}</div>
+                        <div class="order-container-zone" id="blocks-assembly-zone"><span class="text-muted" style="font-size:15px; font-style:italic;">Compile choice segments...</span></div>
+                        <div style="display:flex; justify-content:center; gap:6px; flex-wrap:wrap; margin-top:auto; width:100%;">${scrambledUnits.map((piece, idx) => `<div class="word-fragment-node" id="frag-node-${idx}" onclick="clickFragmentNode(this, '${piece.replace(/'/g, "\\'")}')">${piece}</div>`).join('')}</div>
+                    </div>
+                `;
+            }
+            workspace.innerHTML = html;
+            updateLabNavigationUI();
+        }
+
+        function selectOptionNode(btn) { 
+            const gridParent = btn.parentElement;
+            gridParent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            clearFeedbackFields(); 
+        }
+
+        function selectPullTokenElement(el, textValue) { 
+            const parentPool = el.parentElement;
+            parentPool.querySelectorAll('.draggable-token').forEach(b => b.style.backgroundColor = "var(--surface)");
+            el.style.backgroundColor = "var(--primary-300)";
+            selectedPullDefinitionValue = textValue;
+            clearFeedbackFields();
+            document.getElementById('pull-drop-destination-target').innerHTML = `<span style="color: var(--text); font-weight:700;">${textValue}</span>`;
+        }
+
+        function clickFragmentNode(el, chunk) {
+            if (el.classList.contains('assigned-state')) return;
+            el.classList.add('assigned-state');
+            clearFeedbackFields();
+            const layoutZone = document.getElementById('blocks-assembly-zone');
+            if (arrangedSequenceBlocks.length === 0) layoutZone.innerHTML = '';
+            arrangedSequenceBlocks.push(chunk);
+            const badgeSpan = document.createElement('span');
+            badgeSpan.style.background = "var(--secondary-700)";
+            badgeSpan.style.color = "var(--text-inverse)";
+            badgeSpan.style.padding = "4px 10px";
+            badgeSpan.style.borderRadius = "4px";
+            badgeSpan.style.fontSize = "16px";
+            badgeSpan.textContent = chunk;
+            layoutZone.appendChild(badgeSpan);
+        }
+
+        function triggerScaffoldHint() { 
+            clearFeedbackFields();
+            const hintBox = document.getElementById('fb-hint');
+            if(hintBox) hintBox.style.display = 'block'; 
+        }
+
+        function revealExerciseAnswer() {
+            clearFeedbackFields();
+            const cardNode = document.getElementById('active-exercise-node');
+            if(!cardNode) return;
+            const correctStr = cardNode.dataset.answer;
+            const subType = cardNode.dataset.variant;
+            const targetObj = expressionsDataset.find(e => e.phrase === correctStr);
+
+            if (subType === 'choice') {
+                cardNode.querySelectorAll('.option-btn').forEach(btn => {
+                    if (btn.textContent.trim().toLowerCase() === correctStr.toLowerCase()) btn.classList.add('correct-reveal');
+                });
+            } else if (subType === 'pull') {
+                resetCurrentExercise();
+                const textVal = targetObj ? targetObj.explanation : "";
+                document.getElementById('pull-drop-destination-target').innerHTML = `<span style="color: var(--text); font-weight:700;">${textVal}</span>`;
+                selectedPullDefinitionValue = textVal;
+                cardNode.querySelectorAll('.draggable-token').forEach(el => {
+                    if (el.textContent.trim() === textVal) el.style.backgroundColor = "var(--primary-300)";
+                });
+            } else if (subType === 'order') {
+                resetCurrentExercise();
+                const displayZone = document.getElementById('blocks-assembly-zone');
+                displayZone.innerHTML = '';
+                correctStr.split(' ').forEach(w => {
+                    const block = document.createElement('span');
+                    block.style.background = "var(--secondary-700)";
+                    block.style.color = "var(--text-inverse)";
+                    block.style.padding = "4px 10px";
+                    block.style.borderRadius = "4px";
+                    block.style.fontSize = "16px";
+                    block.textContent = w;
+                    displayZone.appendChild(block);
+                });
+                document.querySelectorAll('.word-fragment-node').forEach(el => el.classList.add('assigned-state'));
+                arrangedSequenceBlocks = correctStr.split(' ');
+            }
+        }
+
+        function resetCurrentExercise() {
+            clearFeedbackFields();
+            selectedPullDefinitionValue = "";
+            if (document.getElementById('pull-drop-destination-target')) {
+                document.getElementById('pull-drop-destination-target').innerHTML = '<span class="text-muted" style="font-style: italic;">Select the correct definition block from below...</span>';
+                document.querySelectorAll('.draggable-token').forEach(b => b.style.backgroundColor = "var(--surface)");
+            }
+            if (document.getElementById('blocks-assembly-zone')) {
+                arrangedSequenceBlocks = [];
+                document.getElementById('blocks-assembly-zone').innerHTML = '<span class="text-muted" style="font-size:15px; font-style:italic;">Compile choice segments...</span>';
+                document.querySelectorAll('.word-fragment-node').forEach(el => el.classList.remove('assigned-state'));
+            }
+            document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected', 'correct-reveal'));
+        }
+
+        function clearFeedbackFields() { document.querySelectorAll('.feedback-banner').forEach(el => el.style.display = 'none'); }
+
+        function verifyExerciseAnswer() {
+            clearFeedbackFields();
+            const node = document.getElementById('active-exercise-node');
+            if(!node) return;
+            const mode = node.dataset.variant;
+            const finalAnswer = node.dataset.answer;
+            const trackingId = node.dataset.termId;
+            let userInputString = '';
+            const targetObj = expressionsDataset.find(e => e.id == trackingId);
+            if (mode === 'choice') {
+                const checked = node.querySelector('.option-btn.selected');
+                if(!checked) { alert("Please pick an option first!"); return; }
+                userInputString = checked.textContent.trim();
+            } else if (mode === 'pull') {
+                if(!selectedPullDefinitionValue) { alert("Please click an explanation block from the pool choices first!"); return; }
+                userInputString = selectedPullDefinitionValue;
+            } else if (mode === 'order') {
+                userInputString = arrangedSequenceBlocks.join(' ');
+            }
+
+            const okBox = document.getElementById('fb-success');
+            const errorBox = document.getElementById('fb-fail');
+            let isInputCorrect = false;
+
+            if (mode === 'pull') {
+                isInputCorrect = targetObj ? (userInputString === targetObj.explanation) : false;
+            } else {
+                isInputCorrect = (userInputString.toLowerCase() === finalAnswer.toLowerCase());
+            }
+
+            if (isInputCorrect) {
+                okBox.style.display = 'block';
+                if (mode === 'choice') node.querySelector('.option-btn.selected').classList.add('correct-reveal');
+                if(!completedExercisesMap[trackingId]) {
+                    completedExercisesMap[trackingId] = true;
+                    calculateProgress();
+                }
+            } else {
+                errorBox.style.display = 'block';
+            }
+        }
+
+        function navigateExercise(step) {
+            currentExerciseIndex += step;
+            if(currentExerciseIndex >= activeDeckExercises.length) currentExerciseIndex = 0;
+            if(currentExerciseIndex < 0) currentExerciseIndex = activeDeckExercises.length - 1;
+            selectedPullDefinitionValue = "";
+            renderExerciseInstance();
+        }
+
+        function updateLabNavigationUI() {
+            document.getElementById('prev-exercise-btn').disabled = (currentExerciseIndex === 0);
+            document.getElementById('next-exercise-btn').disabled = (currentExerciseIndex === activeDeckExercises.length - 1);
+            document.getElementById('task-deck-counter').textContent = `Task ${currentExerciseIndex + 1} / ${activeDeckExercises.length}`;
+        }
+
+        function calculateProgress() {
+            const currentThemeIds = expressionsDataset.filter(item => item.category === activeTheme).map(item => item.id);
+            const verifiedCount = currentThemeIds.filter(id => completedExercisesMap[id]).length;
+            const progressRatioValue = currentThemeIds.length ? Math.round((verifiedCount / currentThemeIds.length) * 100) : 0;
+            document.getElementById('exercise-progress-fill').style.width = `${progressRatioValue}%`;
+            document.getElementById('progress-percentage-label').textContent = `${progressRatioValue}%`;
+        }
+    </script>
+</body>
+</html>
