@@ -75,6 +75,41 @@
             justify-content: center;
             min-height: 100vh;
             padding: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- FLOATING WATERCOLOR DECORATIONS --- */
+        .deco-illustration {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.9;
+            mix-blend-mode: multiply;
+            animation: decoFloat 7s ease-in-out infinite;
+        }
+        .landing-card-hero { z-index: 1; }
+
+        .deco-pig      { top: 6%;  left: 5%;  width: 130px; animation-duration: 6s; }
+        .deco-cats     { top: 4%;  right: 4%; width: 120px; animation-duration: 8s; animation-delay: 0.6s; }
+        .deco-tea      { bottom: 6%; left: 6%; width: 135px; animation-duration: 7.5s; animation-delay: 1.2s; }
+        .deco-cat      { bottom: 5%; right: 5%; width: 125px; animation-duration: 6.8s; animation-delay: 0.3s; }
+        .deco-ballet   { top: 42%; left: 2%; width: 90px;  animation-duration: 9s; animation-delay: 0.9s; }
+
+        @keyframes decoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50%      { transform: translateY(-14px) rotate(2deg); }
+        }
+
+        @media (max-width: 900px) {
+            .deco-ballet { display: none; }
+            .deco-pig, .deco-cats, .deco-tea, .deco-cat { width: 80px; opacity: 0.6; }
+        }
+        @media (max-width: 560px) {
+            .deco-illustration { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .deco-illustration { animation: none; }
         }
 
         .landing-card-hero {
@@ -656,6 +691,12 @@
 <body>
 
     <div id="landing-page" class="container landing-page-container">
+        <img src="wing-pig.png" alt="" aria-hidden="true" class="deco-illustration deco-pig" onerror="this.style.display='none'" />
+        <img src="cats-and-dogs.png" alt="" aria-hidden="true" class="deco-illustration deco-cats" onerror="this.style.display='none'" />
+        <img src="cup-of-tea.png" alt="" aria-hidden="true" class="deco-illustration deco-tea" onerror="this.style.display='none'" />
+        <img src="cat-cartoon.png" alt="" aria-hidden="true" class="deco-illustration deco-cat" onerror="this.style.display='none'" />
+        <img src="ballet-shoes.png" alt="" aria-hidden="true" class="deco-illustration deco-ballet" onerror="this.style.display='none'" />
+
         <div class="landing-card-hero">
             
             <div class="landing-top-split-panel">
