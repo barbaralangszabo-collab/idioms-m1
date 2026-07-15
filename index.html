@@ -81,14 +81,14 @@
         /* --- WATERCOLOR DECORATION ROW --- */
         .deco-row {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: flex-end;
             justify-content: center;
-            gap: 28px;
+            gap: 24px;
             width: 100%;
-            max-width: 1050px;
-            margin-top: 28px;
-            padding: 0 8px;
+            margin: 0 0 16px;
+            padding: 4px 8px 12px;
+            border-bottom: 1px dashed var(--border);
         }
         .deco-illustration {
             pointer-events: none;
@@ -712,6 +712,14 @@
                 </div>
             </div>
 
+            <div class="deco-row" aria-hidden="true">
+                <img src="wing-pig.png" alt="" class="deco-illustration deco-pig" onerror="this.style.display='none'" />
+                <img src="cats-and-dogs.png" alt="" class="deco-illustration deco-cats" onerror="this.style.display='none'" />
+                <img src="ballet-shoes.png" alt="" class="deco-illustration deco-ballet" onerror="this.style.display='none'" />
+                <img src="cup-of-tea.png" alt="" class="deco-illustration deco-tea" onerror="this.style.display='none'" />
+                <img src="cat-cartoon.png" alt="" class="deco-illustration deco-cat" onerror="this.style.display='none'" />
+            </div>
+
             <div class="landing-teaser-grid">
                 <div class="teaser-card-box">
                     <h4>Piece of cake 🍰</h4>
@@ -739,14 +747,6 @@
             </div>
 
             <button class="btn btn-primary" style="padding: 12px 40px; font-size:16px;" onclick="enterApplicationMainRoute()">Start Masterclass →</button>
-        </div>
-
-        <div class="deco-row" aria-hidden="true">
-            <img src="wing-pig.png" alt="" class="deco-illustration deco-pig" onerror="this.style.display='none'" />
-            <img src="cats-and-dogs.png" alt="" class="deco-illustration deco-cats" onerror="this.style.display='none'" />
-            <img src="ballet-shoes.png" alt="" class="deco-illustration deco-ballet" onerror="this.style.display='none'" />
-            <img src="cup-of-tea.png" alt="" class="deco-illustration deco-tea" onerror="this.style.display='none'" />
-            <img src="cat-cartoon.png" alt="" class="deco-illustration deco-cat" onerror="this.style.display='none'" />
         </div>
     </div>
 
