@@ -76,37 +76,46 @@
             min-height: 100vh;
             padding: 8px;
             position: relative;
-            overflow: hidden;
         }
 
-        /* --- FLOATING WATERCOLOR DECORATIONS --- */
+        /* --- WATERCOLOR DECORATION ROW --- */
+        .deco-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 28px;
+            width: 100%;
+            max-width: 1050px;
+            margin-top: 28px;
+            padding: 0 8px;
+        }
         .deco-illustration {
-            position: absolute;
-            z-index: 0;
             pointer-events: none;
-            opacity: 0.9;
+            opacity: 0.92;
             mix-blend-mode: multiply;
             animation: decoFloat 7s ease-in-out infinite;
+            height: auto;
+            flex: 0 0 auto;
         }
         .landing-card-hero { z-index: 1; }
 
-        .deco-pig      { top: 6%;  left: 5%;  width: 130px; animation-duration: 6s; }
-        .deco-cats     { top: 4%;  right: 4%; width: 120px; animation-duration: 8s; animation-delay: 0.6s; }
-        .deco-tea      { bottom: 6%; left: 6%; width: 135px; animation-duration: 7.5s; animation-delay: 1.2s; }
-        .deco-cat      { bottom: 5%; right: 5%; width: 125px; animation-duration: 6.8s; animation-delay: 0.3s; }
-        .deco-ballet   { top: 42%; left: 2%; width: 90px;  animation-duration: 9s; animation-delay: 0.9s; }
+        .deco-pig      { width: 120px; animation-duration: 6s; }
+        .deco-cats     { width: 110px; animation-duration: 8s; animation-delay: 0.6s; }
+        .deco-tea      { width: 130px; animation-duration: 7.5s; animation-delay: 1.2s; }
+        .deco-cat      { width: 125px; animation-duration: 6.8s; animation-delay: 0.3s; }
+        .deco-ballet   { width: 85px;  animation-duration: 9s; animation-delay: 0.9s; }
 
         @keyframes decoFloat {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50%      { transform: translateY(-14px) rotate(2deg); }
+            50%      { transform: translateY(-12px) rotate(2deg); }
         }
 
-        @media (max-width: 900px) {
-            .deco-ballet { display: none; }
-            .deco-pig, .deco-cats, .deco-tea, .deco-cat { width: 80px; opacity: 0.6; }
-        }
-        @media (max-width: 560px) {
-            .deco-illustration { display: none; }
+        @media (max-width: 700px) {
+            .deco-row { gap: 16px; margin-top: 20px; }
+            .deco-pig, .deco-cat, .deco-tea { width: 84px; }
+            .deco-cats { width: 78px; }
+            .deco-ballet { width: 60px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .deco-illustration { animation: none; }
@@ -691,12 +700,6 @@
 <body>
 
     <div id="landing-page" class="container landing-page-container">
-        <img src="wing-pig.png" alt="" aria-hidden="true" class="deco-illustration deco-pig" onerror="this.style.display='none'" />
-        <img src="cats-and-dogs.png" alt="" aria-hidden="true" class="deco-illustration deco-cats" onerror="this.style.display='none'" />
-        <img src="cup-of-tea.png" alt="" aria-hidden="true" class="deco-illustration deco-tea" onerror="this.style.display='none'" />
-        <img src="cat-cartoon.png" alt="" aria-hidden="true" class="deco-illustration deco-cat" onerror="this.style.display='none'" />
-        <img src="ballet-shoes.png" alt="" aria-hidden="true" class="deco-illustration deco-ballet" onerror="this.style.display='none'" />
-
         <div class="landing-card-hero">
             
             <div class="landing-top-split-panel">
@@ -736,6 +739,14 @@
             </div>
 
             <button class="btn btn-primary" style="padding: 12px 40px; font-size:16px;" onclick="enterApplicationMainRoute()">Start Masterclass →</button>
+        </div>
+
+        <div class="deco-row" aria-hidden="true">
+            <img src="wing-pig.png" alt="" class="deco-illustration deco-pig" onerror="this.style.display='none'" />
+            <img src="cats-and-dogs.png" alt="" class="deco-illustration deco-cats" onerror="this.style.display='none'" />
+            <img src="ballet-shoes.png" alt="" class="deco-illustration deco-ballet" onerror="this.style.display='none'" />
+            <img src="cup-of-tea.png" alt="" class="deco-illustration deco-tea" onerror="this.style.display='none'" />
+            <img src="cat-cartoon.png" alt="" class="deco-illustration deco-cat" onerror="this.style.display='none'" />
         </div>
     </div>
 
