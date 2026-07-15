@@ -5,46 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Englishkola - Idioms & Metaphors Masterclass</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Comfortaa:wght@400;600;700&display=swap');
 
         :root {
-            /* Remapped Accent Tones: Light Amber, Terracotta, and Orange - No muddy shades */
-            --primary-300: #FED99B; /* Light amber accent for borders/badges */
-            --primary-500: #FF843D; /* Vibrant orange for interactive states */
-            --primary-700: #D35230; /* Clear terracotta for highly readable font headers & buttons */
+            /* NEW COHESIVE PALETTE: Inspired by the dark cloud and wave elements */
+            --primary-300: #F3EAE3; /* Warm linen sketch paper tone */
+            --primary-500: #D9C3B0; /* Soft tan from the coffee cups and burlap sacks */
+            --primary-700: #A8866B; /* Muted vintage sepia */
             
-            /* Secondary Brand Greens/Teals */
-            --secondary-300: #7EDAD6;
-            --secondary-500: #2BB6B4;
-            --secondary-700: #0F766E;
+            /* Slate Indigo & Deep Teal tones extracted directly from the dark cloud and sea wave */
+            --secondary-300: #D6E3E2; /* Soft frosted aqua glass tint */
+            --secondary-500: #76A1A1; /* Muted ocean wave teal */
+            --secondary-700: #3B4654; /* Deep stormy indigo slate from the prominent dark cloud */
             
-            /* Accent Tones */
-            --accent-300: #E6F7F4;
-            --accent-500: #4DB6AC;
-            --accent-700: #00796B;
-            
-            /* Background & Surfaces from Brief - Soft light sage background */
-            --bg: #EAF1EE;
+            /* Clean backgrounds paired with high contrast accents */
+            --bg: #F9F7F4; 
             --surface: #FFFFFF;
-            --surface-alt: #F5F7FA;
-            --border: #E6E9EF;
+            --surface-alt: #F2EFEA; /* Soft linen wash background */
+            --border: #E3DDD5; 
             
-            /* Text & Status Colors */
-            --text: #1F2937;
-            --text-2: #4B5563;
-            --text-muted: #6B7280;
+            /* Interface Typography & Feedback states */
+            --text: #2C333A; /* Dark slate charcoal for exceptionally crisp contrast */
+            --text-2: #4E5861;
+            --text-muted: #84909C;
             --text-inverse: #FFFFFF;
-            --success: #2F9E44;
-            --warning: #F59F00;
-            --error: #D92D20;
-            --info: #2563EB;
+            --success: #5E8771; /* Organic botanical green */
+            --warning: #D19A66;
+            --error: #C26B63;
+            --info: #5FA0B0;
 
-            /* Typography & Animation Scale Definitions */
-            --font-main: "Inter", "Nunito", system-ui, sans-serif;
-            --font-serif: "Merriweather", serif;
-            --shadow-card: 0 4px 14px rgba(17, 24, 39, 0.08);
-            --transition: 180ms ease;
+            /* Strict Font & Style Preservations */
+            --font-main: "Montserrat", system-ui, sans-serif;
+            --font-display: "Comfortaa", system-ui, sans-serif;
+            --shadow-card: 0 12px 30px rgba(44, 51, 58, 0.06); 
+            --transition: 220ms ease;
         }
 
         * {
@@ -55,7 +49,12 @@
 
         body {
             font-family: var(--font-main);
-            background-color: var(--bg);
+            /* Light linen wash background */
+            background-color: rgb(249, 247, 244);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
             color: var(--text);
             font-size: 16px;
             line-height: 1.5;
@@ -68,7 +67,7 @@
             padding: 16px;
         }
 
-        /* --- OPTIMIZED COMPACT LANDING PAGE STYLES --- */
+        /* --- LANDING HERO STYLING --- */
         .landing-page-container {
             display: flex;
             flex-direction: column;
@@ -81,12 +80,15 @@
         .landing-card-hero {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 24px;
             box-shadow: var(--shadow-card);
-            padding: 20px 24px;
+            padding: 28px 32px;
             max-width: 1050px;
             width: 100%;
             margin-top: -20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
         }
 
         .landing-top-split-panel {
@@ -116,9 +118,10 @@
         }
 
         .landing-title-main {
+            font-family: var(--font-display);
             font-size: 26px;
             font-weight: 700;
-            color: var(--secondary-700); /* Adjusted to match the brand green style */
+            color: var(--secondary-700);
             margin-bottom: 6px;
             line-height: 1.3;
         }
@@ -147,7 +150,7 @@
         .teaser-card-box {
             background: var(--surface-alt);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 16px;
             display: flex;
             flex-direction: column;
@@ -156,14 +159,15 @@
         }
 
         .teaser-card-box h4 {
+            font-family: var(--font-display);
             font-size: 18px;
-            color: var(--primary-700);
+            color: var(--secondary-500);
             margin-bottom: 6px;
             font-weight: 700;
         }
 
         .teaser-card-box p.task-question-text {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text);
             font-weight: 600;
             margin-bottom: 12px;
@@ -174,7 +178,7 @@
             width: 100%;
             background: var(--surface);
             border: 2px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 10px;
             margin-top: 6px;
             font-size: 14px;
@@ -187,19 +191,19 @@
         }
 
         .teaser-option-btn:hover {
-            border-color: var(--primary-300);
-            background: var(--surface);
+            border-color: var(--secondary-500);
+            background: var(--surface-alt);
         }
 
         .teaser-option-btn.correct {
             border-color: var(--success);
-            background-color: rgba(47, 158, 68, 0.1);
+            background-color: rgba(94, 135, 113, 0.12);
             color: var(--success);
         }
 
         .teaser-option-btn.incorrect {
             border-color: var(--error);
-            background-color: rgba(217, 45, 32, 0.1);
+            background-color: rgba(194, 107, 99, 0.12);
             color: var(--error);
         }
 
@@ -210,21 +214,22 @@
             display: none;
         }
 
-        /* --- MASTERCLASS WORKSPACE STYLES --- */
+        /* --- MAIN WORKSPACE COMPACT LAYOUT CONSTRAINTS --- */
         .hidden-layout-state {
             display: none !important;
         }
 
         .brand-header-horizontal {
             background: var(--surface);
-            padding: 24px;
+            padding: 12px 24px;
             border-bottom: 2px solid var(--border);
             box-shadow: var(--shadow-card);
-            border-radius: 0 0 16px 16px; 
-            margin-bottom: 24px;
+            border-radius: 0 0 24px 24px; 
+            margin-bottom: 12px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
+            backdrop-filter: blur(4px);
         }
 
         @media (min-width: 992px) {
@@ -238,7 +243,7 @@
         .header-left-pane {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
             flex-grow: 1;
         }
 
@@ -251,7 +256,7 @@
         }
 
         .brand-logo-main {
-            max-width: 220px; /* Slightly enlarged as requested */
+            max-width: 180px; /* Kept exactly as requested */
             width: 100%;
             height: auto;
             display: block;
@@ -263,45 +268,48 @@
         }
 
         .masterclass-title { 
-            font-size: 32px;
+            font-family: var(--font-display);
+            font-size: 30px; /* Kept exactly as original */
             font-weight: 700;
             color: var(--secondary-700);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .app-intro-frame {
             background: var(--surface-alt);
-            border: 2px solid var(--primary-300);
-            border-radius: 12px;
-            padding: 20px;
+            border: 2px solid var(--primary-500);
+            border-radius: 16px;
+            padding: 12px 20px;
             color: var(--text);
-            font-size: 16px;
+            font-size: 15px; /* Kept exactly as original */
             box-shadow: var(--shadow-card);
             flex-grow: 1;
+            position: relative;
         }
 
         .accordion-trigger {
             width: 100%;
             background-color: var(--surface);
             border: 1px solid var(--border);
-            padding: 12px 20px;
+            padding: 10px 20px;
             text-align: left;
             font-weight: 700;
-            color: var(--primary-700);
-            border-radius: 12px;
+            color: var(--secondary-700);
+            border-radius: 14px;
             cursor: pointer;
-            margin-top: 12px;
+            margin-top: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-family: var(--font-main);
-            font-size: 16px;
+            font-size: 15px; /* Kept exactly as original */
             transition: var(--transition);
             box-shadow: var(--shadow-card);
+            backdrop-filter: blur(4px);
         }
 
         .accordion-trigger:hover {
-            filter: brightness(97%);
+            background-color: var(--surface-alt);
         }
 
         .accordion-content {
@@ -309,26 +317,27 @@
             overflow: hidden;
             transition: max-height 250ms ease-out;
             background-color: var(--surface);
-            border-radius: 0 0 12px 12px;
+            border-radius: 0 0 14px 14px;
         }
 
         .accordion-content.open {
             max-height: 450px;
             border: 1px solid var(--border);
             border-top: none;
-            padding: 16px 20px;
-            margin-bottom: 12px;
+            padding: 12px 20px;
+            margin-bottom: 8px;
         }
 
         .quick-guide h4 {
-            color: var(--primary-700);
+            font-family: var(--font-display);
+            color: var(--secondary-700);
             margin-bottom: 8px;
             font-weight: 700;
         }
 
         .quick-guide ol, .quick-guide p {
             margin-left: 20px;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-2);
         }
 
@@ -337,12 +346,14 @@
             grid-template-columns: 1fr;
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 16px 20px;
-            border-radius: 16px;
+            padding: 10px 20px;
+            border-radius: 20px;
             box-shadow: var(--shadow-card);
-            margin-bottom: 24px;
+            margin-bottom: 12px;
+            margin-top: 8px !important;
             gap: 16px;
             align-items: center;
+            backdrop-filter: blur(4px);
         }
 
         @media (min-width: 768px) {
@@ -351,16 +362,21 @@
 
         .filter-select {
             width: 100%;
-            padding: 12px 16px;
-            font-size: 16px;
+            padding: 10px 16px;
+            font-size: 15px;
             font-weight: 600;
             font-family: var(--font-main);
             border: 2px solid var(--secondary-500);
-            border-radius: 10px;
+            border-radius: 12px;
             color: var(--secondary-700);
             background-color: var(--surface);
             outline: none;
             cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-select:focus {
+            border-color: var(--secondary-700);
         }
 
         .progress-track {
@@ -369,12 +385,12 @@
             height: 14px;
             border-radius: 9999px;
             overflow: hidden;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .progress-fill {
             height: 100%;
-            background-color: var(--success);
+            background-color: var(--secondary-500);
             width: 0%;
             transition: width 250ms ease;
         }
@@ -382,7 +398,7 @@
         .progress-bar-label {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--text-2);
         }
@@ -390,8 +406,8 @@
         .workspace-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
+            gap: 16px;
+            margin-bottom: 12px;
             align-items: start;
         }
 
@@ -400,19 +416,21 @@
         }
 
         .workspace-block-title {
-            font-size: 24px;
+            font-family: var(--font-display);
+            font-size: 22px; /* Kept exactly as original */
             color: var(--secondary-700);
-            border-bottom: 2px solid var(--secondary-500);
-            padding-bottom: 6px;
-            margin-bottom: 16px;
+            border-bottom: 2px solid var(--secondary-300);
+            padding-bottom: 4px;
+            margin-bottom: 12px;
             font-weight: 700;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
         }
 
         .flashcard-container {
             perspective: 1000px;
-            height: 420px;
+            height: 420px; /* Kept precisely as requested */
             cursor: pointer;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         .flashcard-container.flipped .flashcard-inner { transform: rotateY(180deg); }
@@ -431,40 +449,45 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 16px;
+            border-radius: 24px;
             background: var(--surface);
             border: 1px solid var(--border);
             box-shadow: var(--shadow-card);
             padding: 24px;
             display: flex;
             flex-direction: column;
+            backdrop-filter: blur(4px);
         }
 
         .flashcard-front {
             justify-content: center;
             align-items: center;
+            background-image: radial-gradient(var(--surface-alt) 2px, transparent 0);
+            background-size: 16px 16px;
         }
 
         .flashcard-back {
             transform: rotateY(180deg);
             border-color: var(--secondary-300);
+            background: var(--surface-alt);
             justify-content: center;
             align-items: center;
             text-align: center;
         }
 
-        .fc-phrase { font-size: 24px; font-weight: 700; color: var(--text); margin: 8px 0; text-align: center; }
+        .fc-phrase { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--text); margin: 8px 0; text-align: center; }
 
         .image-container {
             width: 100%;
-            height: 220px;
-            border-radius: 12px;
+            height: 220px; /* Kept precisely as requested */
+            border-radius: 16px;
             margin-bottom: 12px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: transparent;
+            background: var(--surface);
+            border: 1px solid var(--border);
         }
 
         .image-container img {
@@ -477,39 +500,39 @@
         .image-placeholder-text {
             font-size: 14px;
             color: var(--text-muted);
-            padding: 8px;
+            padding: 12px;
             text-align: center;
-            font-family: var(--font-serif);
             font-style: italic;
         }
 
-        .fc-instruction { font-size: 14px; color: var(--text-muted); text-transform: uppercase; margin-top: auto; font-weight: 600; }
+        .fc-instruction { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-top: auto; font-weight: 700; letter-spacing: 0.5px; }
 
         .exercise-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 24px;
+            padding: 20px;
             box-shadow: var(--shadow-card); 
-            min-height: 420px;
+            min-height: 420px; /* Kept precisely as requested */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            backdrop-filter: blur(4px);
         }
 
-        .exercise-prompt { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text); text-align: center; width: 100%; }
+        .exercise-prompt { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--text); text-align: center; width: 100%; }
 
         .item-example {
-            font-family: var(--font-serif);
             font-style: italic;
             background: var(--surface-alt);
             padding: 12px;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 15px;
             border-left: 4px solid var(--secondary-500);
             color: var(--text-2);
-            margin: 8px 0;
+            margin: 6px 0;
             text-align: center;
             width: 100%;
         } 
@@ -517,7 +540,7 @@
         .option-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 8px;
             margin-top: auto;
             width: 100%;
         }
@@ -526,8 +549,8 @@
         .option-btn {
             background: var(--surface);
             border: 2px solid var(--border);
-            border-radius: 10px;
-            padding: 12px;
+            border-radius: 14px;
+            padding: 10px;
             text-align: center;
             font-size: 14px; 
             font-weight: 600;
@@ -537,42 +560,49 @@
         }
 
         .option-btn:hover:not(:disabled) {
-            border-color: var(--secondary-300);
+            border-color: var(--secondary-500);
             background: var(--surface-alt);
         } 
         .option-btn.selected { border-color: var(--secondary-700); background-color: var(--secondary-700); color: var(--text-inverse); }
-        .option-btn.correct-reveal { border-color: var(--success); background-color: rgba(47, 158, 68, 0.1); color: var(--success); }
+        .option-btn.correct-reveal { border-color: var(--success); background-color: rgba(94, 135, 113, 0.15); color: var(--success); }
         
-        .drag-match-container { display: flex; flex-direction: column; gap: 10px; margin-top: auto; width: 100%; }
-        .drag-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 12px; background-color: var(--surface-alt); border: 2px dashed var(--border); border-radius: 12px; min-height: 60px; width: 100%; }
-        .draggable-token { background-color: var(--surface); border: 2px solid var(--border); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: var(--transition); text-align: center; }
-        .drop-target-slot { border: 2px dashed var(--secondary-500); background-color: var(--surface-alt); padding: 12px; border-radius: 10px; text-align: center; font-weight: 600; min-height: 50px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        .drag-match-container { display: flex; flex-direction: column; gap: 8px; margin-top: auto; width: 100%; }
+        .drag-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px; background-color: var(--surface-alt); border: 2px dashed var(--border); border-radius: 16px; min-height: 60px; width: 100%; }
+        .draggable-token { background-color: var(--surface); border: 2px solid var(--border); padding: 6px 12px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 13px; transition: var(--transition); text-align: center; color: var(--text-2); }
+        .draggable-token:hover { border-color: var(--secondary-500); background-color: var(--secondary-300); }
+        .drop-target-slot { border: 2px dashed var(--secondary-500); background-color: var(--surface-alt); padding: 10px; border-radius: 14px; text-align: center; font-weight: 600; min-height: 50px; display: flex; align-items: center; justify-content: center; width: 100%; }
         
         .order-container-zone {
             border: 2px dashed var(--border);
             background-color: var(--surface-alt);
-            padding: 12px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 14px;
             min-height: 50px;
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             width: 100%;
         }
 
         .word-fragment-node {
             background-color: var(--surface);
             border: 2px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 6px 12px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 600;
             font-size: 14px;
             transition: var(--transition);
             user-select: none;
+            color: var(--text-2);
+        }
+
+        .word-fragment-node:hover:not(.assigned-state) {
+            border-color: var(--secondary-500);
+            background: var(--secondary-300);
         }
 
         .word-fragment-node.assigned-state {
@@ -601,25 +631,26 @@
             align-items: center;
         }
 
-        .btn { font-size: 16px; font-weight: 600; padding: 10px 20px; border-radius: 9999px; border: none; cursor: pointer; font-family: var(--font-main); transition: var(--transition); text-align: center; }
-        .btn-primary { background: var(--primary-700); color: var(--text-inverse); }
-        .btn-primary:hover { filter: brightness(95%); }
-        .btn-ghost { background: transparent; color: var(--primary-700); border: 2px solid var(--primary-300); }
-        .btn-ghost:hover { background: rgba(254, 217, 155, 0.24); }
-        .btn-action-check { background: var(--secondary-700); color: var(--text-inverse); }
+        .btn { font-size: 15px; font-weight: 600; padding: 10px 22px; border-radius: 9999px; border: none; cursor: pointer; font-family: var(--font-main); transition: var(--transition); text-align: center; }
+        .btn-primary { background: var(--secondary-700); color: var(--text-inverse); }
+        .btn-primary:hover { background: #2A323D; }
+        .btn-ghost { background: transparent; color: var(--secondary-700); border: 2px solid var(--secondary-500); background-color: rgba(255,255,255,0.6); }
+        .btn-ghost:hover { background: var(--secondary-300); }
+        .btn-action-check { background: var(--secondary-500); color: var(--text-inverse); }
+        .btn-action-check:hover { background: #5E8282; }
         
         .action-row {
             display: flex;
             align-items: center;
-            margin-top: 12px;
+            margin-top: 8px;
             width: 100%;
         }
         
-        .feedback-banner { padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 16px; font-weight: 600; display: none; width: 100%; text-align: center; }
-        .fb-ok { background: #E6F4EA; color: var(--success); }
-        .fb-err { background: #FCE8E6; color: var(--error); }
-        .fb-hint { background: #FCE8E6; color: var(--primary-700); font-family: var(--font-serif); font-style: italic; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 14px; font-weight: 600; text-transform: uppercase; background: var(--primary-300); color: var(--primary-700); margin-bottom: 8px; text-align: center; width: fit-content; }
+        .feedback-banner { padding: 8px 12px; border-radius: 12px; margin-bottom: 8px; font-size: 15px; font-weight: 600; display: none; width: 100%; text-align: center; }
+        .fb-ok { background: var(--secondary-300); color: var(--secondary-700); }
+        .fb-err { background: var(--primary-300); color: var(--primary-700); }
+        .fb-hint { background: var(--secondary-300); color: var(--secondary-700); font-style: italic; }
+        .badge { display: inline-block; padding: 4px 14px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; background: var(--primary-300); color: var(--primary-700); margin-bottom: 6px; text-align: center; width: fit-content; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
@@ -673,14 +704,14 @@
                 <img src="branding.png" alt="Englishkola Logo" class="brand-logo-main" onerror="this.style.display='none'" />
                 <div class="app-intro-frame">
                     <h1 class="masterclass-title">Idioms and Metaphors Masterclass</h1>
-                    <p style="margin:0; font-size:16px; font-weight:400; color:inherit;">
+                    <p style="margin:0; font-size:15px; font-weight:400; color:inherit;">
                         Idioms and metaphors are the true core of standard English communication. Mastering them allows you to look beyond literal dictionary words, understand native films or professional publications effortlessly, and express complex human emotions in a creative way.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
             <button class="accordion-trigger" onclick="toggleAccordion('functions-panel')">
                 <span>💡 How to Use This App &amp; What You Will Learn (Click to expand)</span>
                 <span>▼</span>
@@ -696,7 +727,7 @@
                 </div>
             </div>
 
-            <div class="control-dashboard-panel" style="margin-top:16px;">
+            <div class="control-dashboard-panel">
                 <div>
                     <select class="filter-select" id="global-category-filter" onchange="handleCategoryShift()">
                         <option value="routine">Theme 1: Daily Routine &amp; Choices</option>
@@ -756,7 +787,7 @@
                 </div>
             </div>
 
-            <div class="action-row center-axis" style="border-top:1px solid var(--border); padding-top:16px; margin-bottom:20px; justify-content: center; display: flex;">
+            <div class="action-row center-axis" style="border-top:1px solid var(--border); padding-top:12px; margin-top:8px; margin-bottom:16px; justify-content: center; display: flex;">
                 <button class="btn btn-primary" onclick="advanceToNextThemeRoute()">Move to Next Theme Category →</button>
             </div>
         </div>
@@ -911,9 +942,9 @@
 
             let imgBlock = '';
             if(activeCard.file) {
-                imgBlock = `<div class="image-container"><img src="${activeCard.file}" alt="${activeCard.phrase}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder-text\\'>[Visual Asset Illustration: ${activeCard.phrase}]</div>'"></div>`;
+                imgBlock = `<div class="image-container"><img src="${activeCard.file}" alt="${activeCard.phrase}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder-text\\'>🎨 [Visual Asset Illustration: ${activeCard.phrase}]</div>'"></div>`;
             } else {
-                imgBlock = `<div class="image-container"><div class="image-placeholder-text">[Visual Asset Frame: ${activeCard.phrase}]</div></div>`;
+                imgBlock = `<div class="image-container"><div class="image-placeholder-text">☁️ [Visual Asset Frame: ${activeCard.phrase}]</div></div>`;
             }
 
             viewport.innerHTML = `
@@ -962,7 +993,6 @@
             const wordUnits = question.phrase.split(' ');
             
             let availableVariants = ['choice', 'pull'];
-            // Task variation requirement: Only offer word ordering task if there are minimum 4 words
             if (wordUnits.length >= 4) {
                 availableVariants.push('order');
             }
@@ -1040,7 +1070,7 @@
         function selectPullTokenElement(el, textValue) { 
             const parentPool = el.parentElement;
             parentPool.querySelectorAll('.draggable-token').forEach(b => b.style.backgroundColor = "var(--surface)");
-            el.style.backgroundColor = "var(--primary-300)";
+            el.style.backgroundColor = "var(--secondary-300)";
             selectedPullDefinitionValue = textValue;
             clearFeedbackFields();
             document.getElementById('pull-drop-destination-target').innerHTML = `<span style="color: var(--text); font-weight:700;">${textValue}</span>`;
@@ -1057,8 +1087,8 @@
             badgeSpan.style.background = "var(--secondary-700)";
             badgeSpan.style.color = "var(--text-inverse)";
             badgeSpan.style.padding = "4px 10px";
-            badgeSpan.style.borderRadius = "4px";
-            badgeSpan.style.fontSize = "16px";
+            badgeSpan.style.borderRadius = "6px";
+            badgeSpan.style.fontSize = "15px";
             badgeSpan.textContent = chunk;
             layoutZone.appendChild(badgeSpan);
         }
@@ -1087,7 +1117,7 @@
                 document.getElementById('pull-drop-destination-target').innerHTML = `<span style="color: var(--text); font-weight:700;">${textVal}</span>`;
                 selectedPullDefinitionValue = textVal;
                 cardNode.querySelectorAll('.draggable-token').forEach(el => {
-                    if (el.textContent.trim() === textVal) el.style.backgroundColor = "var(--primary-300)";
+                    if (el.textContent.trim() === textVal) el.style.backgroundColor = "var(--secondary-300)";
                 });
             } else if (subType === 'order') {
                 resetCurrentExercise();
@@ -1098,8 +1128,8 @@
                     block.style.background = "var(--secondary-700)";
                     block.style.color = "var(--text-inverse)";
                     block.style.padding = "4px 10px";
-                    block.style.borderRadius = "4px";
-                    block.style.fontSize = "16px";
+                    block.style.borderRadius = "6px";
+                    block.style.fontSize = "15px";
                     block.textContent = w;
                     displayZone.appendChild(block);
                 });
